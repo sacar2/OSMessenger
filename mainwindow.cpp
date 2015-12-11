@@ -11,21 +11,34 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     model = new QStringListModel(this);
 
     //THIS IS WHERE YOU ADD THE EXISTING CHAT ROOMS
     chatlist = new QStringList;
+
+
+
+    //THIS GOES INTO READER
     *chatlist << "Ma Baes" << "ES3313 groupies" << "DOGS" << "Fam";
     model->setStringList(*chatlist);
-
     //set the chatlist list values as the values provided by the model
     ui->chatListView->setModel(model);
 
 
+
+
+
 // these are edit triggers, so you can change the chatorom name when you select the row and type, or if you select the row and double click
-//    ui->chatListView->setEditTriggers(QAbstractItemView::AnyKeyPressed || QAbstractItemView::DoubleClicked);
+// ui->chatListView->setEditTriggers(QAbstractItemView::AnyKeyPressed || QAbstractItemView::DoubleClicked);
 
 }
+
+
+
+
+
+
 
 QVector<chatRoom*> MainWindow::getChatRoom()
 {

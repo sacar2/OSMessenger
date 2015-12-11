@@ -16,4 +16,6 @@ chatRoom::~chatRoom()
 void chatRoom::on_sendButton_clicked()
 {
 
+    //call the writer
+
 }
