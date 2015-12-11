@@ -84,7 +84,7 @@
     <string>gif</string>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton_3">
+  <widget class="QToolButton" name="sendButton">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -109,7 +109,7 @@
   </widget>
   <zorder>gifButton</zorder>
   <zorder>emojiButton</zorder>
-  <zorder>toolButton_3</zorder>
+  <zorder>sendButton</zorder>
   <zorder>textEdit</zorder>
   <zorder>chatView</zorder>
  </widget>

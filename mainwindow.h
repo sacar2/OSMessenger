@@ -21,6 +21,9 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    QVector<chatRoom *> getChatRoom();
+    Ui::MainWindow *ui;
+
     ~MainWindow();
 
 private slots:
@@ -31,7 +34,6 @@ private slots:
     void on_chatListView_doubleClicked(const QModelIndex &index);
 
 private:
-    Ui::MainWindow *ui;
 
     //somehow set the model into the server info!!!!!
     QStringListModel *model;

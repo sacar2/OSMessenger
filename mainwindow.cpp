@@ -27,6 +27,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
+QVector<chatRoom*> MainWindow::getChatRoom()
+{
+    return this->chatrooms;
+
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
