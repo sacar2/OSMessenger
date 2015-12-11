@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>send.png</file>
+        <file>emojibutton.png</file>
+        <file>66fa29917e01191eb599de4a6cac8c8f.jpg</file>
+    </qresource>
+</RCC>

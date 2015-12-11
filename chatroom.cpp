@@ -12,3 +12,8 @@ chatRoom::~chatRoom()
 {
     delete ui;
 }
+
+void chatRoom::on_sendButton_clicked()
+{
+
+}

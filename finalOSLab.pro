@@ -13,8 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    chatroom.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    chatroom.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    chatroom.ui
+
+RESOURCES += \
+    pics.qrc

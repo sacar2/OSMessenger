@@ -15,8 +15,13 @@ public:
     explicit chatRoom(QWidget *parent = 0);
     ~chatRoom();
 
+private slots:
+    void on_sendButton_clicked();
+
 private:
     Ui::chatRoom *ui;
+    //this is the id on the server
+    QString *chatroomName;
 };
 
 #endif // CHATROOM_H
