@@ -23,6 +23,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     QVector<chatRoom *> getChatRoom();
     Ui::MainWindow *ui;
+    QStringList *chatlist;
+
 
     ~MainWindow();
 
@@ -37,7 +39,6 @@ private:
 
     //somehow set the model into the server info!!!!!
     QStringListModel *model;
-    QStringList *chatlist;
     QVector<chatRoom*> chatrooms;
 };
 
