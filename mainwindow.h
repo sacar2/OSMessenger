@@ -10,6 +10,7 @@
 #include <QInputDialog>
 #include "chatroom.h"
 
+#pragma comment(lib,"ws2_32.lib") //Winsock Library
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +21,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    SOCKET sock;
+
     explicit MainWindow(QWidget *parent = 0);
     QVector<chatRoom *> getChatRoom();
     Ui::MainWindow *ui;

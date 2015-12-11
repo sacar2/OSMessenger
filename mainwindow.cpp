@@ -5,12 +5,12 @@
 #include <iostream>
 #include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent, SOCKET s) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    sock= s;
 
     model = new QStringListModel(this);
 
@@ -72,6 +72,10 @@ void MainWindow::on_addChatButton_clicked()
 
     // add new chat into the main list, and model
 
+        //send new chatroom id to server
+        String message = "MR" + name;
+        sendMessage(message);
+
         *chatlist<<name;
         //find #rows in the model,
 
@@ -108,7 +112,23 @@ void MainWindow::on_chatListView_doubleClicked(const QModelIndex &index)
     //get the name of the chatroom - this is also the id on the server
     QString roomName = index.data(Qt::DisplayRole ).toString();
 
+    String message = "ER" + roomName;
+    sendMessage(message);
+
     openChatDialogue(roomName);
 
     return;
+}
+
+void MainWindow::sendMessage(string message)
+{
+    //Send some data
+    char tmp[2000];
+    strcpy(tmp, message.c_str());
+    if( send(sock , tmp , strlen(tmp) , 0) < 0)
+    {
+         puts("Send failed");
+         return;
+    }
+    puts("Data Send\n");
 }
